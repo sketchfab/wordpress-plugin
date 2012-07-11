@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Enter a sketchfab model id</title>
+</head>
+<body>
+<div class="mceTmpl">
+	<form method="POST" action="/" onclick="return false">
+		<label for="width">Model id</label> : 
+		<input type="text" name="id" value="" width="70" />
+		<p>Please put the id of the model you wish to insert (eg. sktechfab.com/show/id)</p>
+		<input type="submit">
+	</form>
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="tiny_mce_popup.js"></script>
+<script type="text/javascript">
+	$('input[type=submit]').click(function(e) {
+		console.log($('input[name=id]').val());
+		var id = $('input[name=id]').val();
+		if(id) {
+			console.log('id ok');
+			tinyMCEPopup.execCommand('mceInsertContent', false, '[sketchfab id="'+id+'"]');
+			tinyMCEPopup.close();
+		}
+	});
+</script>
+</body>
