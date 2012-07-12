@@ -40,9 +40,9 @@ With this plugin all you have to do is to get the id and voila it's embedded. Pl
 
 == Screenshots ==
 
-1. You will find the bottom in the toolbar of the WordPress editor.
+1. You will find the button in the toolbar of the WordPress editor.
 2. All you need to input is the id of the model. You'll find it at the end of the url (eg. sketchfab.com/show/id)
-3. Go set the options
+3. You can set the dimensions of the viewer in the options :)
 
 == Changelog ==
 
