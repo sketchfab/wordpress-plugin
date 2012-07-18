@@ -5,8 +5,6 @@
       	title: 'sketchfabEmbed.sketchfab',
       	image: url+'/sketchfab-mce.png',
       	onclick: function() {
-      		// TODO ckeck for sanitizing input
-      		// 			create a better designed prompt
           ed.windowManager.open ({
             title: 'Embed a sketchfab model', 
             file: url + '/prompt.htm',
@@ -17,11 +15,7 @@
           }, {
             plugin_url : url,
           });
-      		
-          /*var objId = prompt("Sketchfab model", "Enter the id of the url of the Sketchfab model");
-      		if( objId )
-      			ed.execCommand('mceInsertContent', false, '[sketchfab id="'+objId+'"]');
-      	*/}
+      	}
       });
     },
     createControl: function(n, cm) {
