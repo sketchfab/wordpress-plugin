@@ -9,18 +9,24 @@ Author URI: sketchfab.com
 License: A "Slug" license name e.g. GPL2
 */
 
+// v0.3 : New embed options added
 // v0.3 : Better prompt window
 // v0.2 : Added options (width and height)
 // v0.1 : Simple shortcode and button
 
   // Create shortcode handler for Sketchfab
-  // [sketchfab id=xxx]
+  // [sketchfab id=xxx ]
   function addSketchfab($atts, $content = null) {
-    extract(shortcode_atts(array( "id" => '' ), $atts));
+    extract(shortcode_atts(array( "id" => '',
+                                "start" => get_settings('sketchfab-autostart'),
+                                "spin" => get_settings('sketchfab-autospin'),
+                                "controls" => get_settings('sketchfab-controls'),
+                          ), $atts));
     return '<iframe frameborder="0" height="'.get_settings('sketchfab-height').'" 
             width="'.get_settings('sketchfab-width').'" 
             webkitallowfullscreen="true" mozallowfullscreen="true" 
-            src="http://skfb.ly/embed/'.$id.'"></iframe>';
+            src="http://skfb.ly/embed/'.$id.'?autostart='.$start.'
+            &autospin='.$spin.'&controls='.$controls.'"></iframe>';
   }
   add_shortcode('sketchfab', 'addSketchfab');
 
@@ -69,6 +75,9 @@ License: A "Slug" license name e.g. GPL2
   function register_settings() { // whitelist options
     register_setting( 'settings-group', 'sketchfab-width' );
     register_setting( 'settings-group', 'sketchfab-height' );
+    register_setting( 'settings-group', 'sketchfab-autospin' );
+    register_setting( 'settings-group', 'sketchfab-autostart' );
+    register_setting( 'settings-group', 'sketchfab-controls' );
   }
 
   // Page displayed as the settings page
@@ -80,6 +89,7 @@ License: A "Slug" license name e.g. GPL2
   <form method="post" action="options.php">
     <?php settings_fields( 'settings-group' ); ?>
     
+    <h3>Default settings</h3>
     <table class="form-table">
       <tr valign="top">
         <th scope="row">Width</th>
@@ -88,6 +98,18 @@ License: A "Slug" license name e.g. GPL2
       <tr valign="top">
         <th scope="row">Height</th>
         <td><input type="text" name="sketchfab-height" value="<?php echo get_option('sketchfab-height'); ?>" /> px</td>
+      </tr>
+      <tr valign="top">
+        <th scope="row">Autospin</th>
+        <td><input type="text" name="sketchfab-autospin" value="<?php echo get_option('sketchfab-autospin'); ?>" /></td>
+      </tr>
+      <tr valign="top">
+        <th scope="row">Autostart</th>
+        <td><input type="checkbox" name="sketchfab-autostart" value="1" <?php checked(get_option('sketchfab-autostart'), 1); ?>/></td>
+      </tr>
+      <tr valign="top">
+        <th scope="row">Show controls</th>
+        <td><input type="checkbox" name="sketchfab-controls" value="1" <?php checked(get_option('sketchfab-controls'), 1); ?>/></td>
       </tr>
     </table>
     

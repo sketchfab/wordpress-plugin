@@ -7,13 +7,12 @@
       	onclick: function() {
           ed.windowManager.open ({
             title: 'Embed a sketchfab model', 
-            file: url + '/prompt.htm',
-            objId: 'id',
-            width: 320,
-            height: 170,
+            file: url + '/prompt.html',
+            width: 345,
+            height: 190,
             inline: 1
           }, {
-            plugin_url : url,
+            plugin_url : url
           });
       	}
       });
@@ -27,7 +26,7 @@
     		author: 'Sketchfab',
     		authorurl: 'http://sketchfab.com',
     		infourl: 'http://sketchfab.com',
-    		version: '0.1'
+    		version: '0.4'
     	};
     }
   });
