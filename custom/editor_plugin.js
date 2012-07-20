@@ -7,7 +7,7 @@
       	onclick: function() {
           ed.windowManager.open ({
             title: 'Embed a sketchfab model', 
-            file: url + '/prompt.html',
+            file: url + '/prompt.htm',
             width: 345,
             height: 190,
             inline: 1
