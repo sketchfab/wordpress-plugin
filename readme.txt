@@ -46,6 +46,9 @@ With this plugin all you have to do is to get the id and voila it's embedded. Pl
 
 == Changelog ==
 
+= 0.4.x =
+* Fixing some problems
+
 = 0.4 =
 * Embed options added
 
