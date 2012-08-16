@@ -4,7 +4,7 @@ Donate link: http://sketchfab.com/
 Tags: posts, 3D, sketchfab
 Requires at least: 3.0.0
 Tested up to: 3.4.1
-Stable tag: 0.4.5
+Stable tag: 0.4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,9 @@ With this plugin all you have to do is to get the id and voila it's embedded. Pl
 3. You can set the dimensions of the viewer in the options :)
 
 == Changelog ==
+
+= 0.4.6 =
+* SSL support fix
 
 = 0.4.x =
 * Fixing some problems
