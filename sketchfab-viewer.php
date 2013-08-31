@@ -22,11 +22,14 @@ License: A "Slug" license name e.g. GPL2
                                 "start" => get_settings('sketchfab-autostart'),
                                 "spin" => get_settings('sketchfab-autospin'),
                                 "controls" => get_settings('sketchfab-controls'),
+                                "transparent" => get_settings('sketchfab-transparent'),
+                                "width" => get_settings('sketchfab-width'),
+                                "height" => get_settings('sketchfab-height'),
                           ), $atts));
-    return '<iframe frameborder="0" height="'.get_settings('sketchfab-height').'" 
-            width="'.get_settings('sketchfab-width').'" 
+    return '<iframe frameborder="0" height="'.$height.'" 
+            width="'.$width.'" 
             webkitallowfullscreen="true" mozallowfullscreen="true" 
-            src="http://sketchfab.com/embed/'.$id.'?autostart='.$start.'&autospin='.$spin.'&controls='.$controls.'"
+            src="http://sketchfab.com/embed/'.$id.'?autostart='.$start.'&autospin='.$spin.'&controls='.$controls.'&transparent='.$transparent.'"
             ></iframe>';
   }
   add_shortcode('sketchfab', 'addSketchfab');
@@ -79,6 +82,7 @@ License: A "Slug" license name e.g. GPL2
     register_setting( 'settings-group', 'sketchfab-autospin' );
     register_setting( 'settings-group', 'sketchfab-autostart' );
     register_setting( 'settings-group', 'sketchfab-controls' );
+    register_setting( 'settings-group', 'sketchfab-transparent' );
   }
 
   // Page displayed as the settings page
@@ -111,6 +115,10 @@ License: A "Slug" license name e.g. GPL2
       <tr valign="top">
         <th scope="row">Show controls</th>
         <td><input type="checkbox" name="sketchfab-controls" value="1" <?php checked(get_option('sketchfab-controls'), 1); ?>/></td>
+      </tr>
+      <tr valign="top">
+        <th scope="row">Transparent</th>
+        <td><input type="checkbox" name="sketchfab-transparent" value="1" <?php checked(get_option('sketchfab-transparent'), 1); ?>/></td>
       </tr>
     </table>
     
