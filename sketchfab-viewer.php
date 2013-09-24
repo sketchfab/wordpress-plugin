@@ -3,7 +3,7 @@
 Plugin Name: Sketchfab Viewer
 Plugin URI: sketchfab.com
 Description: Display Sketchfab models to wordpress.
-Version: 0.4.7
+Version: 0.4.8
 Author: Sketchfab
 Author URI: sketchfab.com
 License: A "Slug" license name e.g. GPL2
@@ -26,6 +26,16 @@ License: A "Slug" license name e.g. GPL2
                                 "width" => get_settings('sketchfab-width'),
                                 "height" => get_settings('sketchfab-height'),
                           ), $atts));
+
+    // use theme's width
+    if (empty($width))
+      $width = $GLOBALS['content_width'];
+
+    // 4/3 ratio
+    if (empty($height))
+      $height = round(3 * $width / 4);
+
+
     return '<iframe frameborder="0" height="'.$height.'"
             width="'.$width.'"
             webkitallowfullscreen="true" mozallowfullscreen="true" 
