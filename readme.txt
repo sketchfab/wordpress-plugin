@@ -46,6 +46,9 @@ With this plugin all you have to do is to get the id and voila it's embedded. Pl
 
 == Changelog ==
 
+= 0.4.8 =
+* Use HTTPS by default in embed code
+
 = 0.4.7 =
 * Transparent parameter
 * BBCode attribute for width and height
