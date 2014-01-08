@@ -3,7 +3,7 @@
 Plugin Name: Sketchfab Viewer
 Plugin URI: sketchfab.com
 Description: Display Sketchfab models to wordpress.
-Version: 0.4.8
+Version: 0.4.9
 Author: Sketchfab
 Author URI: sketchfab.com
 License: A "Slug" license name e.g. GPL2
@@ -69,7 +69,7 @@ License: A "Slug" license name e.g. GPL2
 
   function sketchfab_create_menu() {
     // Create top-level menu
-    add_menu_page('Sketchfab Plugin Settings', 'Sketchfab Settings', 'administrator',
+    add_menu_page('Sketchfab Plugin Settings', 'Sketchfab', 'administrator',
       __FILE__, 'sketchfab_settings_page', plugins_url('/img/sketchfab-menu-icon.png', __FILE__));
   
     // Call register settings function
