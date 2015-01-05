@@ -26,11 +26,7 @@ License: A "Slug" license name e.g. GPL2
                                 "width" => get_settings('sketchfab-width'),
                                 "height" => get_settings('sketchfab-height'),
                           ), $atts));
-    return '<iframe frameborder="0" height="'.$height.'"
-            width="'.$width.'"
-            webkitallowfullscreen="true" mozallowfullscreen="true"
-            src="https://sketchfab.com/embed/'.$id.'?autostart='.$start.'&autospin='.$spin.'&controls='.$controls.'&transparent='.$transparent.'"
-            ></iframe>';
+    return '<iframe frameborder="0" height="'.$height.'" width="'.$width.'" webkitallowfullscreen="true" mozallowfullscreen="true" src="https://sketchfab.com/models/'.$id.'/embed?autostart='.$start.'&autospin='.$spin.'&controls='.$controls.'&transparent='.$transparent.'"></iframe>';
   }
   add_shortcode('sketchfab', 'addSketchfab');
 
