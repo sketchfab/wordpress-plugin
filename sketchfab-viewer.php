@@ -3,7 +3,7 @@
 Plugin Name: Sketchfab Viewer
 Plugin URI: sketchfab.com
 Description: Display Sketchfab models to wordpress.
-Version: 0.4.9
+Version: 0.4.10
 Author: Sketchfab
 Author URI: sketchfab.com
 License: A "Slug" license name e.g. GPL2
